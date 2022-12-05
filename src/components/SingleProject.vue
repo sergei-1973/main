@@ -5,7 +5,7 @@
       <div class="i">
         <span class="material-icons"> edit </span>
         <span class="material-icons" @click="deleteProject"> delete </span>
-        <span class="material-icons"> done </span>
+        <span class="material-icons" @click="completeProject"> done </span>
       </div>
     </div>
     <div v-if="showDetails" class="details">
@@ -28,6 +28,15 @@ export default {
     deleteProject() {
       fetch(this.uri, { method: "DELETE" })
         .then(() => this.$emit("delete", this.project.id))
+        .catch((err) => console.log(err.message));
+    },
+    completeProject() {
+      fetch(this.uri, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ complete: !this.project.complete }),
+      })
+        .then(() => this.$emit("complete", this.project.id))
         .catch((err) => console.log(err.message));
     },
   },
