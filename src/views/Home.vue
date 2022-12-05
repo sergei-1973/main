@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div v-for="project in projects" :key="project.id">
-      <SingleProject :project="project" />
+      <SingleProject :project="project" @delete="handleDelete" />
     </div>
   </div>
 </template>
@@ -21,6 +21,13 @@ export default {
       .then((res) => res.json())
       .then((data) => (this.projects = data))
       .catch((err) => console.log(err.message));
+  },
+  methods: {
+    handleDelete(id) {
+      this.projects = this.projects.filter((item) => {
+        return item.id !== id;
+      });
+    },
   },
 };
 </script>
