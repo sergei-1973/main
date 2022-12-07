@@ -43,7 +43,6 @@ export default {
 <style>
 .form form {
   background: white;
-  margin: 40px auto;
   padding: 20px;
   border-radius: 10px;
 }
@@ -53,11 +52,10 @@ export default {
   letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #ddd;
+  color: #bbb;
   font-size: 14px;
 }
 .form form input {
-  display: inline;
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
@@ -65,24 +63,20 @@ export default {
   border-bottom: 1px solid #ddd;
 }
 .form form textarea {
-  display: block;
   height: 100px;
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  border: 0;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
+  border: 1px solid #ddd;
 }
 .form form button {
   display: block;
-  padding: 8px 16px;
-  margin: 30px auto;
+  padding: 10px;
+  margin: 20px auto 0;
   background: teal;
   color: white;
   font-size: 16px;
   border: 0;
-  font-weight: bold;
-  border-radius: 4px;
+  border-radius: 6px;
 }
 </style>
